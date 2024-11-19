@@ -187,9 +187,9 @@ done
 # Create GitHub Actions directory
 mkdir -p .github/workflows
 
-# Create workflow for Region A
+# Create workflow for us-east-1
 cat > .github/workflows/deploy-us-east-1.yml <<EOL
-name: Deploy Region A
+name: Deploy us-east-1
 
 on:
   push:
@@ -208,16 +208,16 @@ jobs:
         with:
           terraform_version: 1.5.0
 
-      - name: Deploy Region A
+      - name: Deploy us-east-1
         run: |
           cd us-east-1
           terraform init
           terraform apply -auto-approve
 EOL
 
-# Create workflow for Region B
+# Create workflow for us-west-2
 cat > .github/workflows/deploy-us-west-2.yml <<EOL
-name: Deploy Region B
+name: Deploy us-west-2
 
 on:
   push:
@@ -236,7 +236,7 @@ jobs:
         with:
           terraform_version: 1.5.0
 
-      - name: Deploy Region B
+      - name: Deploy us-west-2
         run: |
           cd us-west-2
           terraform init

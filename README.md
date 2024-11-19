@@ -48,14 +48,14 @@ Key AWS services include:
 ```plaintext
 Fulcrum/
 │
-├── us-east-1/                # Resources for Region A
+├── us-east-1/                # Resources for us-east-1
 │   ├── networking/          # VPC and Subnet configuration
 │   ├── dynamodb/            # DynamoDB table
 │   ├── redis/               # ElastiCache configuration
 │   ├── lambda/              # Lambda function and related files
 │   ├── api-gateway/         # API Gateway configuration
 │
-├── us-west-2/                # Resources for Region B
+├── us-west-2/                # Resources for us-west-2
 │   ├── networking/
 │   ├── dynamodb/
 │   ├── redis/
