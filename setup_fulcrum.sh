@@ -188,13 +188,13 @@ done
 mkdir -p .github/workflows
 
 # Create workflow for Region A
-cat > .github/workflows/deploy-region-a.yml <<EOL
+cat > .github/workflows/deploy-us-east-1.yml <<EOL
 name: Deploy Region A
 
 on:
   push:
     branches:
-      - region-a
+      - us-east-1
 
 jobs:
   deploy:
@@ -210,19 +210,19 @@ jobs:
 
       - name: Deploy Region A
         run: |
-          cd region-a
+          cd us-east-1
           terraform init
           terraform apply -auto-approve
 EOL
 
 # Create workflow for Region B
-cat > .github/workflows/deploy-region-b.yml <<EOL
+cat > .github/workflows/deploy-us-west-2.yml <<EOL
 name: Deploy Region B
 
 on:
   push:
     branches:
-      - region-b
+      - us-west-2
 
 jobs:
   deploy:
@@ -238,7 +238,7 @@ jobs:
 
       - name: Deploy Region B
         run: |
-          cd region-b
+          cd us-west-2
           terraform init
           terraform apply -auto-approve
 EOL

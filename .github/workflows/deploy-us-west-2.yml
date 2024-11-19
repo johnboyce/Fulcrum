@@ -1,0 +1,24 @@
+name: Deploy Region B
+
+on:
+  push:
+    branches:
+      - us-west-2
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.0
+
+      - name: Deploy Region B
+        run: |
+          cd us-west-2
+          terraform init
+          terraform apply -auto-approve
